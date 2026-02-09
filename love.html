@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <title>Love Shape</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: #ffe6eb;
+    }
+    .heart {
+      position: relative;
+      width: 140px;
+      height: 120px;
+      background: red;
+      transform: rotate(-45deg);
+      animation: pulse 1s infinite;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    }
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 140px;
+      height: 140px;
+      background: red;
+      border-radius: 50%;
+    }
+    .heart::before {
+      top: -70px;
+      left: 0;
+    }
+    .heart::after {
+      left: 70px;
+      top: 0;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1) rotate(-45deg); }
+      50% { transform: scale(1.15) rotate(-45deg); }
+      100% { transform: scale(1) rotate(-45deg); }
+    }
+    /* tambahan teks di bawah hati */
+    .caption {
+      position: absolute;
+      top: calc(50% + 120px);
+      transform: translateY(-50%);
+      width: 100%;
+      text-align: center;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      font-size: 20px;
+      color: #b3003b;
+    }
+  </style>
+</head>
+<body>
+  <div style="position:relative;">
+    <div class="heart" aria-hidden="true"></div>
+    <div class="caption">Untukmu ❤️</div>
+  </div>
+</body>
+</html>
